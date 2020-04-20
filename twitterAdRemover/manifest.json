@@ -1,0 +1,59 @@
+{
+  "name": "twitterAdRemover",
+  "short_name": "twitterAdRemover",
+  "description": "twitterAdRemover is a little extension removes twt add twts.",
+  "homepage_url": "https://www.caglarorhan.com",
+  "version": "2020.0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "twtAdRemover",
+    "default_icon": "./img/shuppman-16.png"
+  },
+  "icons": {
+    "16": "./img/shuppman-16.png",
+    "32": "./img/shuppman-32.png",
+    "64": "./img/shuppman-64.png",
+    "128": "./img/shuppman-128.png"
+  },
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "./js/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.heb.com/*",
+        "https://*.target.com/*",
+        "https://*.costco.com/*",
+        "https://*.walmart.com/*",
+        "*://*.shuppman.com/*"
+      ],
+      "all_frames": true,
+      "js": [
+        "./js/content.js"
+      ],
+      "css": [
+        "./css/content.css"
+      ],
+      "match_about_blank": true
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "https://*.heb.com/*",
+    "https://*.target.com/*",
+    "https://*.costco.com/*",
+    "https://*.walmart.com/*",
+    "*://*.shuppman.com/*"
+  ],
+  "web_accessible_resources": [
+    "./js/content.js",
+    "./css/content.css"
+  ]
+}
