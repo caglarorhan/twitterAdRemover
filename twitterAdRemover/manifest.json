@@ -8,29 +8,19 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_title": "twtAdRemover",
-    "default_icon": "./img/shuppman-16.png"
+    "default_icon": "./img/tar-16.png"
   },
   "icons": {
-    "16": "./img/shuppman-16.png",
-    "32": "./img/shuppman-32.png",
-    "64": "./img/shuppman-64.png",
-    "128": "./img/shuppman-128.png"
+    "16": "./img/tar-16.png",
+    "32": "./img/tar-32.png",
+    "64": "./img/tar-64.png",
+    "128": "./img/tar-128.png"
   },
   "options_page": "options.html",
-  "background": {
-    "scripts": [
-      "./js/background.js"
-    ],
-    "persistent": true
-  },
   "content_scripts": [
     {
       "matches": [
-        "https://*.heb.com/*",
-        "https://*.target.com/*",
-        "https://*.costco.com/*",
-        "https://*.walmart.com/*",
-        "*://*.shuppman.com/*"
+        "https://*.twitter.com/*"
       ],
       "all_frames": true,
       "js": [
@@ -43,14 +33,8 @@
     }
   ],
   "permissions": [
-    "storage",
     "activeTab",
-    "tabs",
-    "https://*.heb.com/*",
-    "https://*.target.com/*",
-    "https://*.costco.com/*",
-    "https://*.walmart.com/*",
-    "*://*.shuppman.com/*"
+    "https://*.twitter.com/*"
   ],
   "web_accessible_resources": [
     "./js/content.js",
